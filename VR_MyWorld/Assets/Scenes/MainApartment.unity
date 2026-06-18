@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 797356760}
   - component: {fileID: 797356759}
   - component: {fileID: 797356764}
+  - component: {fileID: 797356765}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -764,7 +765,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1007827040}
   m_Father: {fileID: 456673648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &797356759
@@ -1051,7 +1053,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1007827040}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -1149,7 +1151,7 @@ MonoBehaviour:
   m_EnableUIInteraction: 1
   m_BlockUIOnInteractableSelection: 1
   m_AllowAnchorControl: 1
-  m_UseForceGrab: 1
+  m_UseForceGrab: 0
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
@@ -1413,6 +1415,34 @@ MonoBehaviour:
   leftHandLocalOffset: {x: -0.28, y: -0.25, z: 0.45}
   customLocalOffset: {x: 0.28, y: -0.25, z: 0.45}
   extraEulerRotation: {x: 0, y: 0, z: 0}
+--- !u!114 &797356765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797356757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684eead898238c14997df96b6e7b6ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayInteractor: {fileID: 797356762}
+  attachTransform: {fileID: 1007827040}
+  rotateReference: {fileID: 1814141217}
+  distanceAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  rotateAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  enableDistanceControl: 1
+  distanceSpeed: 2
+  minDistance: 0.4
+  maxDistance: 8
+  invertDistanceInput: 0
+  enableRotationControl: 1
+  rotationSpeed: 120
+  disableWhileSelecting:
+  - {fileID: 2068099550}
 --- !u!1 &847576609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,7 +1862,7 @@ MonoBehaviour:
   m_EnableUIInteraction: 1
   m_BlockUIOnInteractableSelection: 1
   m_AllowAnchorControl: 1
-  m_UseForceGrab: 1
+  m_UseForceGrab: 0
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
@@ -2174,6 +2204,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 963521854}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1007827039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007827040}
+  m_Layer: 0
+  m_Name: RayAttach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007827040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007827039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 797356758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323874382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2657,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2068099548}
   - component: {fileID: 2068099550}
-  - component: {fileID: 2068099549}
   m_Layer: 0
   m_Name: Locomotion
   m_TagString: Untagged
@@ -2619,49 +2679,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 20074696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068099549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068099547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_System: {fileID: 20074703}
-  m_TurnAmount: 45
-  m_DebounceTime: 0.4
-  m_EnableTurnLeftRight: 1
-  m_EnableTurnAround: 1
-  m_DelayTime: 0
-  m_LeftHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: 441ccedd-46a2-4692-9b1c-9c8d2bcf8eb0
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightHandSnapTurnAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Hand Snap Turn
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: c55c1dab-76df-4f0d-a9af-aa3f174710e1
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
 --- !u!114 &2068099550
 MonoBehaviour:
   m_ObjectHideFlags: 0
